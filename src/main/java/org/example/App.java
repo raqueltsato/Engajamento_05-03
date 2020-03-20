@@ -1,15 +1,13 @@
 package org.example;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class App {
 
     private static Scanner sc = new Scanner(System.in);
-    private static List<Aluno> listaAlunos = new ArrayList<Aluno>();
+    private static HashSet<Aluno> listaAlunos = new HashSet<Aluno>();
 
     public static void main(String[] args) {
 
@@ -41,26 +39,20 @@ public class App {
     private static void inserirAluno() {
         System.out.println("Insira o nome: ");
         String nome = sc.nextLine();
-        if(verificaNomeExistente(nome)){
+        Aluno a = new Aluno(nome);
+        if (listaAlunos.contains(a)) {
+            System.err.println("Aluno já cadastrado");
+        } else{
             listaAlunos.add(new Aluno(nome));
-        }else{
-            System.out.println("\n#### NOME JA CADASTRADO ####\n");
         }
+
     }
 
-    private static boolean verificaNomeExistente(String nome){
-        for (Aluno aluno : listaAlunos){
-            if (aluno.getNome().equals(nome)){
-                return false;
-            }
-        }
-        return true;
-    }
 
     private static void exibirLista() {
+
         System.out.println("----- Lista de nomes -----");
-        for (Aluno aluno : listaAlunos){
-            System.out.println(aluno.getNome());
-        }
+        listaAlunos.forEach(System.out::println);
+
     }
 }
