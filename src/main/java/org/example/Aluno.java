@@ -4,13 +4,16 @@ import java.util.Objects;
 
 public class Aluno {
 
+    private String ra;
     private String nome;
 
-    public Aluno(String nome) {
+    public Aluno(String ra, String nome) {
+        this.ra = ra;
         this.nome = nome;
+
     }
 
-   public String getNome() {
+    public String getNome() {
         return nome;
     }
 
@@ -18,21 +21,26 @@ public class Aluno {
         this.nome = nome;
     }
 
+    public String getRa() { return ra; }
+
+    public void setRa(String ra) { this.ra = ra; }
+
+    //Verifica se o RA já foi cadastrado
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Aluno aluno = (Aluno) o;
-        return nome.equals(aluno.nome);
+        return Objects.equals(ra, aluno.ra);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome);
+        return Objects.hash(ra);
     }
 
     @Override
     public String toString() {
-        return nome;
+        return "RA: " +ra+ " Nome: " +nome;
     }
 }
