@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Aluno {
 
+
     private String ra;
     private String nome;
 
@@ -12,7 +13,7 @@ public class Aluno {
         this.nome = nome;
 
     }
-
+    //gets e sets
     public String getNome() {
         return nome;
     }
