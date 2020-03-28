@@ -37,15 +37,13 @@ public class App {
     }
 
     private static void inserirAluno() {
-        System.out.println("Insira o Ra: ");
-        String ra = sc.nextLine();
         System.out.println("Insira o nome: ");
         String nome = sc.nextLine();
-        Aluno a = new Aluno(ra, nome);
+        Aluno a = new Aluno(nome);
         if (listaAlunos.contains(a)) {
             System.err.println("Aluno já cadastrado");
         } else{
-            listaAlunos.add(new Aluno(ra, nome));
+            listaAlunos.add(new Aluno(nome));
         }
 
     }
