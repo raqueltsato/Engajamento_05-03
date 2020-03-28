@@ -7,7 +7,7 @@ import java.util.*;
 public class App {
 
     private static Scanner sc = new Scanner(System.in);
-    private static Set<Aluno> listaAlunos = new HashSet<Aluno>();
+    private static Set<String> listaAlunos = new HashSet<String>();
 
     public static void main(String[] args) {
 
@@ -39,8 +39,7 @@ public class App {
     private static void inserirAluno() {
         System.out.println("Insira o nome: ");
         String nome = sc.nextLine();
-        Aluno a = new Aluno(nome);
-        listaAlunos.add(new Aluno(nome));
+        listaAlunos.add(nome);
     }
 
 
