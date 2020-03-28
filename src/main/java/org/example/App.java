@@ -7,7 +7,7 @@ import java.util.*;
 public class App {
 
     private static Scanner sc = new Scanner(System.in);
-    private static HashSet<Aluno> listaAlunos = new HashSet<Aluno>();
+    private static Set<Aluno> listaAlunos = new HashSet<Aluno>();
 
     public static void main(String[] args) {
 
@@ -40,12 +40,7 @@ public class App {
         System.out.println("Insira o nome: ");
         String nome = sc.nextLine();
         Aluno a = new Aluno(nome);
-        if (listaAlunos.contains(a)) {
-            System.err.println("Aluno já cadastrado");
-        } else{
-            listaAlunos.add(new Aluno(nome));
-        }
-
+        listaAlunos.add(new Aluno(nome));
     }
 
 
