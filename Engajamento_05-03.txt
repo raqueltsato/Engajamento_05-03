@@ -1,0 +1,1 @@
+A Escolha do atributo RA foi um forma que criamos para diferenciar os alunos inseridos, caso estes possuissem o mesmo nome. Após reavaliar o código, julgamos não ser necessário, resultando na exclusão deste atributo.
